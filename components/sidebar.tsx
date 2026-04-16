@@ -10,7 +10,7 @@ export default function Sidebar({
   const navigation = [
     { name: "Dashboard", href: "/dashboard", icon: BarChart3 },
     { name: "Inventory", href: "/inventory", icon: Package },
-    { name: "Add Product", href: "/products/new", icon: Plus },
+    { name: "Add Product", href: "/add-product", icon: Plus },
     { name: "Settings", href: "/settings", icon: Settings },
   ];
   return (
@@ -28,12 +28,18 @@ export default function Sidebar({
         </div>
 
         {navigation.map((item, key) => {
-            const IconComp = item.icon;
-            const isActive = currentPath === item.href;
-            const baseClasses = "flex items-center gap-x-3 px-3 py-2 rounded-md";
-            const activeClasses = isActive ? "bg-purple-100 text-gray-800" : "text-gray-300 hover:bg-gray-800 hover:text-white";
+          const IconComp = item.icon;
+          const isActive = currentPath === item.href;
+          const baseClasses = "flex items-center gap-x-3 px-3 py-2 rounded-md";
+          const activeClasses = isActive
+            ? "bg-purple-100 text-gray-800"
+            : "text-gray-300 hover:bg-gray-800 hover:text-white";
           return (
-            <Link key={key} href={item.href} className={baseClasses + " " + activeClasses}>
+            <Link
+              key={key}
+              href={item.href}
+              className={baseClasses + " " + activeClasses}
+            >
               <IconComp className="w-5 h-5" />
               {item.name}
             </Link>
@@ -43,7 +49,7 @@ export default function Sidebar({
 
       <div className="absolute bottom-0 left-0 right-0 p-6 border-t border-gray-800">
         <div className="flex items-center justify-between">
-            <UserButton showUserInfo />
+          <UserButton showUserInfo />
         </div>
       </div>
     </div>
