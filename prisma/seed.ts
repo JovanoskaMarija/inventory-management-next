@@ -14,9 +14,6 @@ async function main() {
       createdAt: new Date(Date.now() - 1000 * 60 * 60 * 25 * (i * 5)),
     })),
   });
-
-  console.log("Database seeded successfully.");
-  console.log(`Created 30 products for user with ID: ${demoUserId}`);
 }
 
 main()

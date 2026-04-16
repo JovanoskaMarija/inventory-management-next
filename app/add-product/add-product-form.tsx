@@ -31,7 +31,6 @@ export default function AddProductForm() {
   });
 
   const onSubmit = (data: ProductFormValues) => {
-    console.log("Submitting form with data:", data);
     startTransition(async () => {
       const formData = new FormData();
 

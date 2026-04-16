@@ -15,7 +15,6 @@ interface ProductChartProps {
 }
 
 export default function ProductChart({ data }: { data: ProductChartProps[] }) {
-  console.log("ProductChart data:", JSON.stringify(data));
   return (
     <div className="h-48 w-full">
       <ResponsiveContainer width="100%" height="100%">
